@@ -2294,5 +2294,13 @@
 		"description": "TightVNC is a free and Open Source remote desktop software that lets you access and control a computer over the network. With its intuitive interface, you can interact with the remote screen as if you were sitting in front of it. You can open files, launch applications, and perform other actions on the remote desktop almost as if you were physically there",
 		"link": "https://www.tightvnc.com/",
 		"winget": "GlavSoft.TightVNC"
+	},
+	"WPFInstallirfanview": {
+		"category": "Personal",
+		"choco": "irfanview",
+		"content": "IrfanView",
+		"description": "IrfanView is an image viewer, editor, organiser and converter program for Microsoft Windows",
+		"link": "https://www.irfanview.com/",
+		"winget": "IrfanSkiljan.IrfanView"
 	}
 }
