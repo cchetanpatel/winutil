@@ -2302,5 +2302,21 @@
 		"description": "IrfanView is an image viewer, editor, organiser and converter program for Microsoft Windows",
 		"link": "https://www.irfanview.com/",
 		"winget": "IrfanSkiljan.IrfanView"
+	},
+	"WPFInstallPicard": {
+		"category": "Personal",
+		"choco": "Picard",
+		"content": "Picard",
+		"description": "Picard is a cross-platform music tagger powered by the MusicBrainz database.",
+		"link": "https://picard.musicbrainz.org/",
+		"winget": "na"
+	},
+	"WPFInstallSQLiteDBBrowser": {
+		"category": "Personal",
+		"choco": "SQLiteDBBrowser",
+		"content": "SQLiteDBBrowser",
+		"description": "DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.",
+		"link": "https://sqlitebrowser.org/",
+		"winget": "DBBrowserForSQLite.DBBrowserForSQLite"
 	}
 }

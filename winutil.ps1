@@ -10,7 +10,7 @@
     Author         : Chris Titus @christitustech
     Runspace Author: @DeveloperDurp
     GitHub         : https://github.com/ChrisTitusTech
-    Version        : 24.03.30
+    Version        : 24.04.10
 #>
 param (
     [switch]$Debug,
@@ -47,7 +47,7 @@ Add-Type -AssemblyName System.Windows.Forms
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
 $sync.PSScriptRoot = $PSScriptRoot
-$sync.version = "24.03.30"
+$sync.version = "24.04.10"
 $sync.configs = @{}
 $sync.ProcessRunning = $false
 
@@ -7126,6 +7126,30 @@ $sync.configs.applications = '{
 		"description": "TightVNC is a free and Open Source remote desktop software that lets you access and control a computer over the network. With its intuitive interface, you can interact with the remote screen as if you were sitting in front of it. You can open files, launch applications, and perform other actions on the remote desktop almost as if you were physically there",
 		"link": "https://www.tightvnc.com/",
 		"winget": "GlavSoft.TightVNC"
+	},
+	"WPFInstallirfanview": {
+		"category": "Personal",
+		"choco": "irfanview",
+		"content": "IrfanView",
+		"description": "IrfanView is an image viewer, editor, organiser and converter program for Microsoft Windows",
+		"link": "https://www.irfanview.com/",
+		"winget": "IrfanSkiljan.IrfanView"
+	},
+	"WPFInstallPicard": {
+		"category": "Personal",
+		"choco": "Picard",
+		"content": "Picard",
+		"description": "Picard is a cross-platform music tagger powered by the MusicBrainz database.",
+		"link": "https://picard.musicbrainz.org/",
+		"winget": "na"
+	},
+	"WPFInstallSQLiteDBBrowser": {
+		"category": "Personal",
+		"choco": "SQLiteDBBrowser",
+		"content": "SQLiteDBBrowser",
+		"description": "DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.",
+		"link": "https://sqlitebrowser.org/",
+		"winget": "DBBrowserForSQLite.DBBrowserForSQLite"
 	}
 }' | convertfrom-json
 $sync.configs.dns = '{
@@ -11483,6 +11507,16 @@ $inputXML =  '<Window x:Class="WinUtility.MainWindow"
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstallytdlp" Content="Yt-dlp" ToolTip="Command-line tool that allows you to download videos from YouTube and other supported sites. It is an improved version of the popular youtube-dl." Margin="0,0,2,0"/><TextBlock Name="WPFInstallytdlpLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://github.com/yt-dlp/yt-dlp" />
 </StackPanel>
+<Label Content="Personal" FontSize="16"/>
+<StackPanel Orientation="Horizontal">
+<CheckBox Name="WPFInstallirfanview" Content="IrfanView" ToolTip="IrfanView is an image viewer, editor, organiser and converter program for Microsoft Windows" Margin="0,0,2,0"/><TextBlock Name="WPFInstallirfanviewLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://www.irfanview.com/" />
+</StackPanel>
+<StackPanel Orientation="Horizontal">
+<CheckBox Name="WPFInstallPicard" Content="Picard" ToolTip="Picard is a cross-platform music tagger powered by the MusicBrainz database." Margin="0,0,2,0"/><TextBlock Name="WPFInstallPicardLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://picard.musicbrainz.org/" />
+</StackPanel>
+<StackPanel Orientation="Horizontal">
+<CheckBox Name="WPFInstallSQLiteDBBrowser" Content="SQLiteDBBrowser" ToolTip="DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite." Margin="0,0,2,0"/><TextBlock Name="WPFInstallSQLiteDBBrowserLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://sqlitebrowser.org/" />
+</StackPanel>
 <Label Content="Pro Tools" FontSize="16"/>
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstalladvancedip" Content="Advanced IP Scanner" ToolTip="Advanced IP Scanner is a fast and easy-to-use network scanner. It is designed to analyze LAN networks and provides information about connected devices." Margin="0,0,2,0"/><TextBlock Name="WPFInstalladvancedipLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://www.advanced-ip-scanner.com/" />
@@ -11629,6 +11663,11 @@ $inputXML =  '<Window x:Class="WinUtility.MainWindow"
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstallgpuz" Content="GPU-Z" ToolTip="GPU-Z provides detailed information about your graphics card and GPU." Margin="0,0,2,0"/><TextBlock Name="WPFInstallgpuzLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://www.techpowerup.com/gpuz/" />
 </StackPanel>
+
+</StackPanel>
+</Border>
+<Border Grid.Row="1" Grid.Column="4">
+<StackPanel Background="{MainBackgroundColor}" SnapsToDevicePixels="True">
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstallgsudo" Content="Gsudo" ToolTip="Gsudo is a sudo implementation for Windows, allowing elevated privilege execution." Margin="0,0,2,0"/><TextBlock Name="WPFInstallgsudoLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://gerardog.github.io/gsudo/" />
 </StackPanel>
@@ -11641,11 +11680,6 @@ $inputXML =  '<Window x:Class="WinUtility.MainWindow"
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstalljdownloader" Content="JDownloader" ToolTip="JDownloader is a feature-rich download manager with support for various file hosting services." Margin="0,0,2,0"/><TextBlock Name="WPFInstalljdownloaderLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="http://jdownloader.org/" />
 </StackPanel>
-
-</StackPanel>
-</Border>
-<Border Grid.Row="1" Grid.Column="4">
-<StackPanel Background="{MainBackgroundColor}" SnapsToDevicePixels="True">
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstallkdeconnect" Content="KDE Connect" ToolTip="KDE Connect allows seamless integration between your KDE desktop and mobile devices." Margin="0,0,2,0"/><TextBlock Name="WPFInstallkdeconnectLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://community.kde.org/KDEConnect" />
 </StackPanel>
