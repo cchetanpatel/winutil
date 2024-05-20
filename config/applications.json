@@ -2331,8 +2331,18 @@
 		"category": "Personal",
 		"choco": "na",
 		"content": "ReNamer",
-		"description": "Pinterest is an image sharing and social media service designed to enable saving and discovery of information.",
+		"description": "ReNamer is a very powerful and flexible file renaming tool.",
 		"link": "https://www.den4b.com/products/renamer",
 		"winget": "den4b.ReNamer"
+	},
+	"WPFInstallDBeaver": {
+		"category": "Personal",
+		"choco": "dbeaver",
+		"content": "DBeaver",
+		"description": "DBeaver is free and open source universal database tool for developers and database administrators.",
+		"link": "https://dbeaver.io/download/",
+		"winget": "dbeaver.dbeaver"
 	}
+
+
 }

@@ -10,7 +10,7 @@
     Author         : Chris Titus @christitustech
     Runspace Author: @DeveloperDurp
     GitHub         : https://github.com/ChrisTitusTech
-    Version        : 24.04.18
+    Version        : 24.05.20
 #>
 param (
     [switch]$Debug,
@@ -47,7 +47,7 @@ Add-Type -AssemblyName System.Windows.Forms
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
 $sync.PSScriptRoot = $PSScriptRoot
-$sync.version = "24.04.18"
+$sync.version = "24.05.20"
 $sync.configs = @{}
 $sync.ProcessRunning = $false
 
@@ -7166,7 +7166,17 @@ $sync.configs.applications = '{
 		"description": "Pinterest is an image sharing and social media service designed to enable saving and discovery of information.",
 		"link": "https://www.den4b.com/products/renamer",
 		"winget": "den4b.ReNamer"
+	},
+	"WPFInstallDBeaver": {
+		"category": "Personal",
+		"choco": "dbeaver",
+		"content": "DBeaver",
+		"description": "DBeaver is free and open source universal database tool for developers and database administrators.",
+		"link": "https://dbeaver.io/download/",
+		"winget": "dbeaver.dbeaver"
 	}
+
+
 }' | convertfrom-json
 $sync.configs.dns = '{
     "Google":{
@@ -11525,6 +11535,9 @@ $inputXML =  '<Window x:Class="WinUtility.MainWindow"
 </StackPanel>
 <Label Content="Personal" FontSize="16"/>
 <StackPanel Orientation="Horizontal">
+<CheckBox Name="WPFInstallDBeaver" Content="DBeaver" ToolTip="DBeaver is free and open source universal database tool for developers and database administrators." Margin="0,0,2,0"/><TextBlock Name="WPFInstallDBeaverLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://dbeaver.io/download/" />
+</StackPanel>
+<StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstallirfanview" Content="IrfanView" ToolTip="IrfanView is an image viewer, editor, organiser and converter program for Microsoft Windows" Margin="0,0,2,0"/><TextBlock Name="WPFInstallirfanviewLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://www.irfanview.com/" />
 </StackPanel>
 <StackPanel Orientation="Horizontal">
@@ -11688,14 +11701,14 @@ $inputXML =  '<Window x:Class="WinUtility.MainWindow"
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstallgsudo" Content="Gsudo" ToolTip="Gsudo is a sudo implementation for Windows, allowing elevated privilege execution." Margin="0,0,2,0"/><TextBlock Name="WPFInstallgsudoLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://gerardog.github.io/gsudo/" />
 </StackPanel>
-<StackPanel Orientation="Horizontal">
-<CheckBox Name="WPFInstallhwinfo" Content="HWiNFO" ToolTip="HWiNFO provides comprehensive hardware information and diagnostics for Windows." Margin="0,0,2,0"/><TextBlock Name="WPFInstallhwinfoLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://www.hwinfo.com/" />
-</StackPanel>
 
 </StackPanel>
 </Border>
 <Border Grid.Row="1" Grid.Column="4">
 <StackPanel Background="{MainBackgroundColor}" SnapsToDevicePixels="True">
+<StackPanel Orientation="Horizontal">
+<CheckBox Name="WPFInstallhwinfo" Content="HWiNFO" ToolTip="HWiNFO provides comprehensive hardware information and diagnostics for Windows." Margin="0,0,2,0"/><TextBlock Name="WPFInstallhwinfoLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://www.hwinfo.com/" />
+</StackPanel>
 <StackPanel Orientation="Horizontal">
 <CheckBox Name="WPFInstallintelpresentmon" Content="Intel-PresentMon" ToolTip="A new gaming performance overlay and telemetry application to monitor and measure your gaming experience." Margin="0,0,2,0"/><TextBlock Name="WPFInstallintelpresentmonLink" Style="{StaticResource HoverTextBlockStyle}" Text="(?)" ToolTip="https://game.intel.com/us/stories/intel-presentmon/" />
 </StackPanel>
